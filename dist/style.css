@@ -1,0 +1,359 @@
+body {  
+    /* display: grid;
+    grid-template-columns: 
+        [full-start] minmax(1em, 1fr) 
+        [main-start] minmax(0, 40em) [main-end]
+        minmax(1em, 1fr) [full-end]; */
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0.4rem 10%;
+    font-family: Inconsolata;
+    background-color: rgb(17, 17, 17);
+    color: #ff2626;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+  
+#game {
+
+    /* Grid Version */
+    /* display: grid;
+    grid-column: 2 / 3; */
+
+    /* Flex Version */
+    display: none;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    margin-top: 6rem; 
+    border: 4px solid #fe2323;
+    border-radius: 0;
+    color: #fe2323;
+}
+
+#status {
+    text-align: center;
+    padding-top: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.glitch {
+    position: relative;
+}
+
+@keyframes glitch-anim {
+    0% {
+      clip: rect(21px, 9999px, 76px, 0);
+    }
+    5% {
+      clip: rect(26px, 9999px, 85px, 0);
+    }
+    10% {
+      clip: rect(9px, 9999px, 66px, 0);
+    }
+    15% {
+      clip: rect(71px, 9999px, 86px, 0);
+    }
+    20% {
+      clip: rect(16px, 9999px, 48px, 0);
+    }
+    25% {
+      clip: rect(33px, 9999px, 71px, 0);
+    }
+    30% {
+      clip: rect(14px, 9999px, 72px, 0);
+    }
+    35% {
+      clip: rect(15px, 9999px, 76px, 0);
+    }
+    40% {
+      clip: rect(88px, 9999px, 14px, 0);
+    }
+    45% {
+      clip: rect(78px, 9999px, 60px, 0);
+    }
+    50% {
+      clip: rect(2px, 9999px, 98px, 0);
+    }
+    55% {
+      clip: rect(40px, 9999px, 31px, 0);
+    }
+    60% {
+      clip: rect(40px, 9999px, 100px, 0);
+    }
+    65% {
+      clip: rect(61px, 9999px, 72px, 0);
+    }
+    70% {
+      clip: rect(97px, 9999px, 28px, 0);
+    }
+    75% {
+      clip: rect(83px, 9999px, 91px, 0);
+    }
+    80% {
+      clip: rect(25px, 9999px, 65px, 0);
+    }
+    85% {
+      clip: rect(80px, 9999px, 46px, 0);
+    }
+    90% {
+      clip: rect(79px, 9999px, 65px, 0);
+    }
+    95% {
+      clip: rect(7px, 9999px, 85px, 0);
+    }
+    100% {
+      clip: rect(73px, 9999px, 52px, 0);
+    }
+  }
+
+@keyframes glitch-anim-2 {
+0% {
+    clip: rect(98px, 9999px, 23px, 0);
+}
+5% {
+    clip: rect(32px, 9999px, 82px, 0);
+}
+10% {
+    clip: rect(41px, 9999px, 74px, 0);
+}
+15% {
+    clip: rect(31px, 9999px, 92px, 0);
+}
+20% {
+    clip: rect(65px, 9999px, 92px, 0);
+}
+25% {
+    clip: rect(52px, 9999px, 76px, 0);
+}
+30% {
+    clip: rect(14px, 9999px, 50px, 0);
+}
+35% {
+    clip: rect(24px, 9999px, 91px, 0);
+}
+40% {
+    clip: rect(8px, 9999px, 19px, 0);
+}
+45% {
+    clip: rect(57px, 9999px, 51px, 0);
+}
+50% {
+    clip: rect(79px, 9999px, 12px, 0);
+}
+55% {
+    clip: rect(68px, 9999px, 35px, 0);
+}
+60% {
+    clip: rect(88px, 9999px, 49px, 0);
+}
+65% {
+    clip: rect(94px, 9999px, 36px, 0);
+}
+70% {
+    clip: rect(99px, 9999px, 97px, 0);
+}
+75% {
+    clip: rect(12px, 9999px, 21px, 0);
+}
+80% {
+    clip: rect(55px, 9999px, 95px, 0);
+}
+85% {
+    clip: rect(73px, 9999px, 4px, 0);
+}
+90% {
+    clip: rect(15px, 9999px, 64px, 0);
+}
+95% {
+    clip: rect(68px, 9999px, 92px, 0);
+}
+100% {
+    clip: rect(20px, 9999px, 84px, 0);
+}
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: red;
+}
+
+.glitch::before {
+    /* ... anything needed to make it identical */
+  
+    /* variation */
+    left: 2px;
+    text-shadow: -1px 0 red;
+    
+    /* important: opaque background masks the original */
+    background: rgb(17, 17, 17);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+
+.glitch::after {
+/* ... anything needed to make it identical */
+
+/* variation */
+left: -2px;
+text-shadow: -1px 0 blue;
+
+/* important: opaque background masks the original */
+background: rgb(17, 17, 17);
+clip: rect(44px, 450px, 56px, 0);
+animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+#player-selection {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#character-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 47rem;
+    padding-top: 1rem;
+}
+
+.characters-info {
+    display: flex;
+}
+
+.character-bio {
+    width: 420px;
+    font-size: 1.7em;
+    padding: 1rem 1rem 1rem 0;
+}
+
+.character-bio::before, .character-bio::after {
+    width: 420px;
+    padding: 1rem 1rem 1rem 0;
+}
+
+.characters {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 1.4rem 0 0 0;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 16.66rem;
+    margin: 0 2.5rem 2.3rem 2.5rem;
+  }
+
+.character-select {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 11.66rem;
+height: 11.6rem;
+/* margin: 0 2.5rem 2.3rem 2.5rem; */
+}
+
+.player-selection-header {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Cursor prompt blink */
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* 
+.character-select:hover .hovered-character {
+    display: inline;
+} */
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.prompt {
+    font-size: 1em;
+    animation: blink 0.5s steps(2, start) infinite;
+    position: relative;
+    
+    display: inline;
+}
+/* .hovered-character::before {
+    content: '_';
+    animation: blink 0.5s steps(2, start) infinite;
+} */
+
+
+.character-name {
+    position: relative;
+    top: -1em;
+    font-size: 2em;
+    background-color: black;
+    display: none;
+}
+
+.character .image-container {
+    height: 16.66rem;
+    margin-bottom: 1rem;
+}
+.image-container img {
+    image-rendering: pixelated;
+    width: 100%;
+}
+
+.character-stats {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.health {
+    font-size: 3rem;
+    word-spacing: -0.3em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem; 
+}
+
+#attack {
+    font-family: Inconsolata;
+    font-size: 1.5rem;
+    color: #fe2323;
+    background-color: rgb(17, 17, 17);
+    border: 3px solid #fe2323;
+}

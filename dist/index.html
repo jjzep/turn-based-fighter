@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="reset.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
+    </head>
+    <body>
+            <div id="game">
+                <div id="status">Target Identified</div>
+                <section class="characters">
+                    <section id="player" class="character">
+                        <div id="player-portrait"class="image-container">
+                            <!-- <img src="./components/Blood-Order.png" alt></img> -->
+                        </div>
+                        <div class="character-stats">
+                            <div id="player-attributes" class="attributes">
+                                <!-- <p>Attack: 10</p>
+                                <p>Defense: 4</p>
+                                <p>Energy: 30</p> -->
+                            </div>
+                            <div id="player-health" class="health">
+                                
+                            </div>
+                        </div>
+                    </section>
+                    <section id="enemy" class="character">
+                        <div id="enemy-portrait" class="image-container">
+                            <!-- <img src="./components/Gun-Runners.png" alt></img> -->
+                        </div>
+                        
+                        <div class="character-stats">
+                            <div id="enemy-attributes" class="attributes">
+                                <!-- <p>Attack: 10</p>
+                                <p>Defense: 4</p>
+                                <p>Energy: 30</p> -->
+                            </div>
+                            <div id="enemy-health" class="health">
+                                
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <footer><button id='attack'>Attack</button></footer>
+            </div>
+            <div id="player-selection" class="characters">
+                <div class="player-selection-header">
+                    <h1 class="glitch" data-text="CHOOSE MERC:">CHOOSE MERC: </h1>
+                    <h1 data-text="" class="hovered-character glitch"></h1>
+                </div>
+                <div class="characters-info">
+                    <div class="character-bio glitch" data-text="To ensure that your organization is a force in the city, you take the logical route. Eliminate all other Overlords, leaving no opposition.">To ensure that your organization is a force in the city, you take the logical route. Eliminate all other Overlords, leaving no opposition.</div>
+                    <section id="character-list">
+                        
+                    </section>
+                </div>
+            </div>
+            <script src="./bundle.js" type="module"></script>
+    </body>
+</html>
